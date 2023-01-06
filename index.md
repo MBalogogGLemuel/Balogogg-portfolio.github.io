@@ -1,8 +1,8 @@
-## Portfolio
+## My Portfolio
 
 ---
 
-### Category Name 1 
+### Data science and data analytics 
 
 [Project 1 Title](/sample_page)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
