@@ -29,7 +29,7 @@
 
 ---
 ### Tout savoir sur Git
-[Project 1 Title](/sample_page_copy)
+[Project 1 Title](/pages/sample_page_copy)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 
