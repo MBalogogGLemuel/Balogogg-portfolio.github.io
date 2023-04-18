@@ -4,7 +4,7 @@
 ---
 ### Deploiemnt d'un model IA
 [Project 1 Title](/pages/deploiement_ia)
-<img src="images/deployement.jpg?raw=true"/>
+<img src="images/deployement.jpg?raw=true" width="200" height="200"/>
 
 ---
 
