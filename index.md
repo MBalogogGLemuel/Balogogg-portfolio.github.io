@@ -1,6 +1,12 @@
 ## My Projects
 
 ---
+---
+### Deploiemnt d'un model IA
+[Project 1 Title](/pages/deploiement_ia)
+<img src="images/deployement.jpg?raw=true"/>
+
+---
 
 ### Data science and data analytics 
 
