@@ -4,6 +4,7 @@
 ---
 ### Deploiemnt d'un model IA
 
+[*<small>IA Deployment</small>*](/pages/deploiement_ia)
 <div align="center">
     <img src="images/deployement.png?raw=true" width="100" height="100"/>
     <br/>
