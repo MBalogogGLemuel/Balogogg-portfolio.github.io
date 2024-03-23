@@ -2,12 +2,12 @@
 
 ---
 ---
-### Deploiemnt d'un model IA
+### Deploiement d'un model IA
 
 <!-- [*<small>IA Deployment</small>*](/pages/deploiement_ia) -->
 
 <div align="center">
-    <img src="images/deployementlamdada.png?raw=true" width="70" height="50"/>
+    <img src="images/deployement.png?raw=true" width="150" height="150"/>
     <br/>
     <a href="/pages/deploiement_ia"><i><small>IA Deployment</small></i></a>
 </div>
@@ -15,18 +15,46 @@
 
 ---
 
+### Recherche operationnelle
+[*<small>Optimisation de la gestion d'une ferme</small>*](/pages/deploiement_ia) 
+
+<div align="center">
+        <img src="images/dummy_thumbnail.jpg?raw=true"/>
+        <br/>
+</div>
+
+_L'objectif etant de maximiser les profits tout en balancant avec les contraintes, afin de produire de la biomasse. On utilisera une approche deterministe._ 
+
+---
+
 ### Data science and data analytics 
 
-[Project 1 Title](/sample_page)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[*<small>EcoEnergy</small>*](/pages/deploiement_ia) 
+
+<div align="center">
+        <img src="images/dummy_thumbnail.jpg?raw=true"/>
+        <br/>
+</div>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+
+[*<small>Flights delays and Cancellation prediction</small>*](/pages/deploiement_ia) 
+
+<div align="center">
+        <img src="images/dummy_thumbnail.jpg?raw=true"/>
+        <br/>
+</div>
 
 ---
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+
+### Natural Language processing
+
+[*<small>Analyse des revues liees a la Covid sous differentes perspectives</small>*](/pages/deploiement_ia) 
+
+<div align="center">
+        <img src="images/dummy_thumbnail.jpg?raw=true"/>
+        <br/>
+</div>
 
 ---
 <!--
