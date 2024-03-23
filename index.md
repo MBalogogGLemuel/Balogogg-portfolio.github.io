@@ -1,4 +1,4 @@
-## My Projects
+e## My Projects
 
 ---
 ---
@@ -76,5 +76,5 @@ _L'objectif etant de maximiser les profits tout en balancant avec les contrainte
 
 
 ---
-<p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
+<!--<p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">Here</a></p>-->
 <!-- Remove above link if you don't want to attibute -->
