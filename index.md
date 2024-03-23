@@ -40,7 +40,7 @@ _L'objectif etant de maximiser les profits tout en balancant avec les contrainte
 [*<small>Flights delays and Cancellation prediction</small>*](/pages/deploiement_ia) 
 
 <div align="center">
-        <img src="images/dummy_thumbnail.jpg?raw=true"/>
+        <img src="images/airport-cancellation-board.jpg?raw=true" width="480" height="320"/>
         <br/>
 </div>
 
@@ -51,7 +51,7 @@ _L'objectif etant de maximiser les profits tout en balancant avec les contrainte
 [*<small>Analyse des revues liees a la Covid sous differentes perspectives</small>*](/pages/deploiement_ia) 
 
 <div align="center">
-        <img src="images/dummy_thumbnail.jpg?raw=true"/>
+        <img src="images/covid1.jpg?raw=true" width="480" height="320"/>
         <br/>
 </div>
 
