@@ -3,23 +3,21 @@
 ---
 ---
 ### Deploiement d'un model IA
-
-<!-- [*<small>IA Deployment</small>*](/pages/deploiement_ia) -->
+[*<small>IA Deployment</small>*](/pages/deploiement_ia)
 
 <div align="center">
-    <img src="images/deployement.png?raw=true" width="150" height="150"/>
-    <br/>
-    <a href="/pages/deploiement_ia"><i><small>IA Deployment</small></i></a>
+    <!-- <a href="/pages/deploiement_ia"><i><small>IA Deployment</small></i></a> <br/> -->
+    <img src="images/deployement.png?raw=true" width="480" height="320"/>
+        
 </div>
-
 
 ---
 
-### Recherche operationnelle
+### Recherche operationnelle - Operations research
 [*<small>Optimisation de la gestion d'une ferme</small>*](/pages/deploiement_ia) 
 
 <div align="center">
-        <img src="images/dummy_thumbnail.jpg?raw=true"/>
+        <img src="images/Optimisation1.png?raw=true" width="480" height="320"/>
         <br/>
 </div>
 
@@ -32,11 +30,12 @@ _L'objectif etant de maximiser les profits tout en balancant avec les contrainte
 [*<small>EcoEnergy</small>*](/pages/deploiement_ia) 
 
 <div align="center">
-        <img src="images/dummy_thumbnail.jpg?raw=true"/>
+        <img src="images/deployementlamdada.jpg?raw=true" width="480" height="320"/>
         <br/>
 </div>
 
 ---
+
 
 [*<small>Flights delays and Cancellation prediction</small>*](/pages/deploiement_ia) 
 
