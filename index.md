@@ -7,8 +7,9 @@
 <div align="center">
     <img src="images/deployement.png?raw=true" width="100" height="100"/>
     <br/>
-    [IA Deployment](/pages/deploiement_ia)
+    <a href="/pages/deploiement_ia"><i><small>IA Deployment</small></i></a>
 </div>
+
 
 ---
 
