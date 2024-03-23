@@ -3,8 +3,12 @@
 ---
 ---
 ### Deploiemnt d'un model IA
-[Project 1 Title](/pages/deploiement_ia)
-<img src="images/deployement.png?raw=true" width="100" height="100"/>
+
+<div align="center">
+    <img src="images/deployement.png?raw=true" width="100" height="100"/>
+    <br/>
+    [IA Deployment](/pages/deploiement_ia)
+</div>
 
 ---
 
