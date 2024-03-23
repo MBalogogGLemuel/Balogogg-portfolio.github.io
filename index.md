@@ -7,7 +7,7 @@
 <!-- [*<small>IA Deployment</small>*](/pages/deploiement_ia) -->
 
 <div align="center">
-    <img src="images/deployementlamdada.png?raw=true" width="100" height="100"/>
+    <img src="images/deployementlamdada.png?raw=true" width="70" height="50"/>
     <br/>
     <a href="/pages/deploiement_ia"><i><small>IA Deployment</small></i></a>
 </div>
