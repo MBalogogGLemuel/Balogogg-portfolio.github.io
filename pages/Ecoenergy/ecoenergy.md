@@ -1,6 +1,3 @@
-Voici le texte mis à jour avec le lien vers le résumé du projet en format PDF :
-
-```markdown
 # Surveillance des appareils électroménagers avec l'apprentissage automatique : Un projet de Eco Énergie
 
 **Auteurs:** Tristan Brunet, Federic Bapoungue, Georges Lemuel Balogog M.
@@ -42,4 +39,3 @@ Eco Énergie est déterminé à offrir à ses clients les outils nécessaires po
 Pour plus de détails, consultez le [résumé du projet en format PDF](/pdf/EcoEnergy_Projet_Capstone.pdf).
 
 Restez à l'écoute pour les prochaines mises à jour sur ce projet passionnant !
-```
