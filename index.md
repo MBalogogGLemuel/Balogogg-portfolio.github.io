@@ -27,7 +27,7 @@ _L'objectif etant de maximiser les profits tout en balancant avec les contrainte
 
 ### Data science and data analytics 
 
-[*<small>EcoEnergy</small>*](/pages/deploiement_ia) 
+[*<small>EcoEnergy</small>*](/pages/Ecoenergy/ecoenergy) 
 
 <div align="center">
         <img src="images/deployementlamdada.jpg?raw=true" width="480" height="320"/>
