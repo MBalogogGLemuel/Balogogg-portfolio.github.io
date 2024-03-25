@@ -1,5 +1,5 @@
 title: Georges Balogog # your name (or website title) here
-logo: "/images/logofin.png?raw=true" # your photo (or logo) here
+logo: "<img src='/images/logofin.png?raw=true' width='60' height='60'>" # "/images/logofin.png?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   Passionate about data technologies and Addressing optimization problems
   <br><br>
