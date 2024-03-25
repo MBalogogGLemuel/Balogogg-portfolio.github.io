@@ -14,7 +14,7 @@
 ---
 
 ### Recherche operationnelle - Operations research
-[*<small>Optimisation de la gestion d'une ferme</small>*](/pages/deploiement_ia) 
+[*<small>BioFerme</small>*](/pages/BioFerme/BioFerme) 
 
 <div align="center">
         <img src="images/Optimisation1.png?raw=true" width="480" height="320"/>
