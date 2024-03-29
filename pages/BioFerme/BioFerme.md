@@ -30,7 +30,6 @@ Ainsi, il est claire que les leviers de **decision** de l'agriculteur seront les
 - $$ \mathcal{I} = \{ \text{Ble} , \text{Mais} , \text{Betterave}  \}$$ 
 - $$ \mathcal{J} = \mathcal{I} \text{ - } \text{Betterave}$$ 
 - $$ i \in \mathcal{I} $$ : les differentes cultures plantees par l'agriculteur
-
 - $$X_i$$ : les superficies allouees pour les differentes cultures i ($$\forall i \in \mathcal{I}$$ )
 - $$B_j$$ : Quantites achetee pour les differents produits j (Buy) ($$\forall j \in \mathcal{J}$$ )
 
@@ -58,7 +57,7 @@ Ainsi, il est claire que les leviers de **decision** de l'agriculteur seront les
 
 1. **Équilibre de la Superficie Cultivée** :
 
-   $$\sum_{i \in \mathcal{I}} X_i = \text{Superficie Totale Disponible} \leq 500 \text{\textit{ Acres}}$$
+   $$\sum_{i \in \mathcal{I}} X_i = \text{Superficie Totale Disponible} \leq 500 \textit{ Acres}$$
 
 2. **Contraintes de Vente-Achat-Production de Produits** :
 
@@ -93,9 +92,14 @@ Ainsi, il est claire que les leviers de **decision** de l'agriculteur seront les
    - Contrainte 1 : 
    
    $$r_{\text{betterave}} . X_{\text{betterave}} = K_1 + K_2 = P_{\text{betterave}}$$
+
    - Contrainte 2 : 
    
-   $$ 0 \leq K_1 \leq Quota$$ $$ 0 \leq K_2 \leq M$$ ou plus simplement :   $$36.r_{\text{betterave}} . X_{\text{betterave}} \leq 36K_1 + 10K_2$$  et $$ 0 \leq K_1 \leq Quota$$
+   $$ 0 \leq K_1 \leq Quota$$ $$ 0 \leq K_2 \leq M$$ 
+   
+   ou plus simplement :   
+   
+   $$36.r_{\text{betterave}} . X_{\text{betterave}} \leq 36K_1 + 10K_2$$  et $$ 0 \leq K_1 \leq Quota$$
 
    - Contrainte 3 : $$ N_{\text{Betterave}} = 0$$ 
 
@@ -217,3 +221,7 @@ L'optimisation mathématique offre une approche puissante pour résoudre les pro
 
 
 ## Modèle Mathématique pour la Gestion Agricole : Etape 2 - Decision sous incertitude (Concept de Matrice des gains, Prise de decision - Minimax, Maximax, ... Equivalent certain)
+
+On introduit maintenant une incertitude sur la **meteo** (le temps qu'il fait) qui a pour consequence **majeure** le rendement des parcelles de culture. On fera l'hypothese qu'aucun changement n'est fait sur le marche (prix d'achat et de vente).
+
+On a donc potentiellement un climat **Mauvais**, **Moyen** (le cas deterministe etudie precedemment), une meteo **Bonne**. Pour chaque temps, qu'il fait on associe une variation sur le rendement habituelle observe (le rendement moyen ou le **Moyen** qui est celui donnee par le modele deterministe de base prcedemment etudie).
