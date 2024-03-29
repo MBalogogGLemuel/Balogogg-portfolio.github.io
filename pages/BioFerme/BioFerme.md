@@ -95,11 +95,16 @@ Ainsi, il est claire que les leviers de **decision** de l'agriculteur seront les
 
    - Contrainte 2 : 
    
-   $$ 0 \leq K_1 \leq Quota$$ $$ 0 \leq K_2 \leq M$$ 
+   $$ 0 \leq K_1 \leq Quota$$ 
+   $$ 0 \leq K_2 \leq M$$ 
    
    ou plus simplement :   
    
-   $$36.r_{\text{betterave}} . X_{\text{betterave}} \leq 36K_1 + 10K_2$$  et $$ 0 \leq K_1 \leq Quota$$
+   $$36.r_{\text{betterave}} . X_{\text{betterave}} \leq 36K_1 + 10K_2$$  
+   
+   et 
+   
+   $$ 0 \leq K_1 \leq Quota$$
 
    - Contrainte 3 : $$ N_{\text{Betterave}} = 0$$ 
 
@@ -224,4 +229,6 @@ L'optimisation mathématique offre une approche puissante pour résoudre les pro
 
 On introduit maintenant une incertitude sur la **meteo** (le temps qu'il fait) qui a pour consequence **majeure** le rendement des parcelles de culture. On fera l'hypothese qu'aucun changement n'est fait sur le marche (prix d'achat et de vente).
 
-On a donc potentiellement un climat **Mauvais**, **Moyen** (le cas deterministe etudie precedemment), une meteo **Bonne**. Pour chaque temps, qu'il fait on associe une variation sur le rendement habituelle observe (le rendement moyen ou le **Moyen** qui est celui donnee par le modele deterministe de base prcedemment etudie).
+On a donc potentiellement un climat **Mauvais**, **Moyen** (le cas deterministe etudie precedemment), une meteo **Bonne**. Pour chaque temps, qu'il fait on associe une variation sur le rendement habituelle observe (le rendement moyen ou le **Moyen** qui est celui donnee par le modele deterministe de base prcedemment etudie). Ainisi en temps **Mauvais**, les rendement vont **diminuer** de 20 % : soit **80 %** du rendement moyen generalement observe; en temps **Bon** ou favorable, les rendement vont **augmenter** de 20 % : soit **120 %** du rendement moyen generalement observe.
+
+Des lors, on peut donc calculer les nouveaux rendements dans chaque cas en notant toutefois, que aucune information n'est diponible sur le temps qu'il fera; on s'adaptera selon l'intuition du fermier (**selon l'aversion au risque du decideur**) ou au jour le jour. 
