@@ -96,6 +96,7 @@ Ainsi, il est claire que les leviers de **decision** de l'agriculteur seront les
    - Contrainte 2 : 
    
    $$ 0 \leq K_1 \leq Quota$$ 
+
    $$ 0 \leq K_2 \leq M$$ 
    
    ou plus simplement :   
@@ -138,7 +139,7 @@ $$P_{\text{betterave}} = K_1 + K_2 $$
 
 $$ 0 \leq K_1 \leq Quota$$
 
-$$ X_i, B_i \ \geq \ 0 \text{ pour tout } i \in \mathcal{I} $$
+$$ X_i, B_i, K_1, K_2 \ \geq \ 0 \text{ pour tout } i \in \mathcal{I} $$
 
 Nous utilisons des outils d'optimisation pour résoudre le modèle mathématique que nous avons développé. Cela nous permet d'obtenir les valeurs optimales des variables de décision et de conséquence, ainsi que le profit total réalisé par l'agriculteur. Nous analysons les résultats obtenus pour comprendre les décisions optimales recommandées par le modèle. Cela peut inclure l'allocation optimale des superficies, les quantités à acheter et à produire, ainsi que le profit total réalisé par l'agriculteur.
 
@@ -150,14 +151,14 @@ Après avoir résolu ce modèle mathématique, nous avons obtenu les résultats 
 
 |               | Ble   | Maïs  | Betterave | Variable associée |
 |---------------|-------|-------|-----------|-------------------|
-| Surface       | 120   | 80    | 300       | $X_i$                 |
-| Qte Achat     | 0     | 0     | 0         | $B_i$             |
-| Rendement     | 2.5   | 3     | 20        | $r_i$                 |
-| Total ventes  | $17,000 | $-   | $-        | $TS_i$            |
-| Achat  (40% de plus du Prix vente)       | $238  | $210  | -         | $B_i$ 
-| Production    | 300   | 240   | 6000      | $P_i$                 |
-| Écart P-D     | 100   | 0     | 6000      | $S_i$             |
-| Quantité disponible | 300 | 240 | 6000    | $QS_i$            |
+| Surface       | 120   | 80    | 300       | $$X_i$$                 |
+| Qte Achat     | 0     | 0     | 0         | $$B_i$$             |
+| Rendement     | 2.5   | 3     | 20        | $$r_i$$                 |
+| Total ventes  | $17,000 | $-   | $-        | $$TS_i$$            |
+| Achat  (40% de plus du Prix vente)       | $238  | $210  | -         | $$B_i$$ 
+| Production    | 300   | 240   | 6000      | $$P_i$$                 |
+| Écart P-D     | 100   | 0     | 6000      | $$S_i$$             |
+| Quantité disponible | 300 | 240 | 6000    | $$QS_i$$            |
 
 
 - **Profit Total** : 118 600 $
@@ -232,3 +233,18 @@ On introduit maintenant une incertitude sur la **meteo** (le temps qu'il fait) q
 On a donc potentiellement un climat **Mauvais**, **Moyen** (le cas deterministe etudie precedemment), une meteo **Bonne**. Pour chaque temps, qu'il fait on associe une variation sur le rendement habituelle observe (le rendement moyen ou le **Moyen** qui est celui donnee par le modele deterministe de base prcedemment etudie). Ainisi en temps **Mauvais**, les rendement vont **diminuer** de 20 % : soit **80 %** du rendement moyen generalement observe; en temps **Bon** ou favorable, les rendement vont **augmenter** de 20 % : soit **120 %** du rendement moyen generalement observe.
 
 Des lors, on peut donc calculer les nouveaux rendements dans chaque cas en notant toutefois, que aucune information n'est diponible sur le temps qu'il fera; on s'adaptera selon l'intuition du fermier (**selon l'aversion au risque du decideur**) ou au jour le jour. 
+
+| Scenario | Ble   | Mais  | Betterave | Rendements |
+|----------|-------|-------|-----------|------------|
+| Mauvais  | 2.00  | 2.40  | 16.00     | 80%        |
+| Moyenne  | 2.50  | 3.00  | 20.00     | 100%       |
+| Bonne    | 3.00  | 3.60  | 24.00     | 120%       |
+
+
+Avant de poursuivre , je tiens a preciser 02 concepts qui seront observes par la suite.
+
+**Stratégie** : Ensemble de décisions prises par un décideur pour atteindre un objectif donné dans un environnement incertain. Cette stratégie peut viser à maximiser les bénéfices, minimiser les coûts, ou atteindre tout autre objectif défini par le problème.
+
+**Scénario** : Représente une configuration ou une réalisation possible de l'incertitude dans le modèle d'optimisation. Il peut y avoir plusieurs scénarios possibles, chacun étant associé à une probabilité ou à une pondération spécifique. Ces scénarios reflètent généralement des variations dans les données d'entrée telles que les conditions météorologiques, les demandes du marché, les coûts des ressources, etc.
+
+L'objectif de l'optimisation sous incertitude est souvent de déterminer la meilleure stratégie à adopter, en tenant compte de tous les scénarios possibles et de leurs probabilités associées, afin de maximiser ou de minimiser une fonction objectif donnée.
