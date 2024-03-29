@@ -11,20 +11,20 @@ La gestion d'une ferme agricole implique la prise en compte de divers facteurs, 
 Un modèle mathématique peut aider les agriculteurs à prendre ces décisions en formulant le problème de gestion agricole comme un problème d'optimisation. Voici les équations globales de base qui définissent ce modèle :
 
 1. **Équilibre de la Superficie Cultivée** :
-   \(\sum_{i \in \text{Produits}} X_i = \text{Superficie Totale Disponible}\)
+   $$\sum_{i \in \text{Produits}} X_i = \text{Superficie Totale Disponible}$$
 
 2. **Contraintes de Vente et d'Achat de Produits** :
-   \(\sum_{i \in \text{Produits}} (P_i \cdot X_i) - \sum_{i \in \text{Produits}} (C_i \cdot Y_i) \geq 0\)
+   $$\sum_{i \in \text{Produits}} (P_i \cdot X_i) - \sum_{i \in \text{Produits}} (C_i \cdot Y_i) \geq 0$$
 
 3. **Satisfaction de la Demande Minimale** :
-   \(\sum_{i \in \text{Produits}} X_i \geq \text{Demande Minimale}\)
+   $$\sum_{i \in \text{Produits}} X_i \geq \text{Demande Minimale}$$
 
 4. **Contraintes Spécifiques à la Culture de la Betterave** :
-   - Contrainte 1 : \(X_{\text{betterave}} \leq 100\)
-   - Contrainte 2 : \(Y_{\text{betterave}} = 0\)
+   - Contrainte 1 : $$X_{\text{betterave}} \leq 100$$
+   - Contrainte 2 : $$Y_{\text{betterave}} = 0$$
 
 5. **Objectif de Maximisation des Profits** :
-   \(\text{Maximiser } \sum_{i \in \text{Produits}} (P_i \cdot X_i) - \sum_{i \in \text{Produits}} (C_i \cdot Y_i)\)
+   $$\text{Maximiser } \sum_{i \in \text{Produits}} (P_i \cdot X_i) - \sum_{i \in \text{Produits}} (C_i \cdot Y_i)$$
 
 
 Dans ces équations :
