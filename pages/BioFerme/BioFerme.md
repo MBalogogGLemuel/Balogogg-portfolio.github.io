@@ -243,8 +243,8 @@ Des lors, on peut donc calculer les nouveaux rendements dans chaque cas en notan
 
 Avant de poursuivre , je tiens a preciser 02 concepts qui seront observes par la suite.
 
-**Stratégie** : Ensemble de décisions prises par un décideur pour atteindre un objectif donné dans un environnement incertain. Cette stratégie peut viser à maximiser les bénéfices, minimiser les coûts, ou atteindre tout autre objectif défini par le problème.
+**Stratégie** caracterise souvent des **choix** (un ensemble de valeurs defini par le decideur pour les differentes variables de decision, des portefeuilles d'actions ou de projet surlequel investir...NOte: il faut noter que a la fin, **_une seule decision sera prise_**): Ensemble de décisions prises par un décideur pour atteindre un objectif donné dans un environnement incertain. Cette stratégie peut viser à maximiser les bénéfices, minimiser les coûts, ou atteindre tout autre objectif défini par le problème.
 
-**Scénario** : Représente une configuration ou une réalisation possible de l'incertitude dans le modèle d'optimisation. Il peut y avoir plusieurs scénarios possibles, chacun étant associé à une probabilité ou à une pondération spécifique. Ces scénarios reflètent généralement des variations dans les données d'entrée telles que les conditions météorologiques, les demandes du marché, les coûts des ressources, etc.
+**Scénario** souvent appele **Etats** dans lequel l'environnement du decideur evolue: Représente une configuration ou une réalisation possible de l'incertitude dans le modèle d'optimisation. Il peut y avoir plusieurs scénarios possibles, chacun étant associé à une probabilité ou à une pondération spécifique. Ces scénarios reflètent généralement des variations dans les données d'entrée telles que les conditions météorologiques, les demandes du marché, les coûts des ressources, etc.
 
 L'objectif de l'optimisation sous incertitude est souvent de déterminer la meilleure stratégie à adopter, en tenant compte de tous les scénarios possibles et de leurs probabilités associées, afin de maximiser ou de minimiser une fonction objectif donnée.
