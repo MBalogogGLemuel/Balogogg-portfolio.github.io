@@ -240,6 +240,8 @@ Des lors, on peut donc calculer les nouveaux rendements dans chaque cas en notan
 | Moyenne  | 2.50  | 3.00  | 20.00     | 100%       |
 | Bonne    | 3.00  | 3.60  | 24.00     | 120%       |
 
+![Modele Resolu sous Excel](/images/biofferme/Bioferme_Rendements.png)
+
 
 Avant de poursuivre , je tiens a preciser 02 concepts qui seront observes par la suite.
 
@@ -248,3 +250,59 @@ Avant de poursuivre , je tiens a preciser 02 concepts qui seront observes par la
 **Scénario** souvent appele **Etats** dans lequel l'environnement du decideur evolue: Représente une configuration ou une réalisation possible de l'incertitude dans le modèle d'optimisation. Il peut y avoir plusieurs scénarios possibles, chacun étant associé à une probabilité ou à une pondération spécifique. Ces scénarios reflètent généralement des variations dans les données d'entrée telles que les conditions météorologiques, les demandes du marché, les coûts des ressources, etc.
 
 L'objectif de l'optimisation sous incertitude est souvent de déterminer la meilleure stratégie à adopter, en tenant compte de tous les scénarios possibles et de leurs probabilités associées, afin de maximiser ou de minimiser une fonction objectif donnée.
+
+1. **Resolution de chaque scenario :**
+
+Afin de resourdre ce probleme sous-incertitude, on va resourdre le **probleme deterministe associe a chaque scenario**, pris individuellement.
+
+| **Scenario** | Mauvais    | Moyenne   | Bonne     |
+|------------|------------|-----------|-----------|
+| **Rendement** | 80%        | 100%      | 120%      |
+|            |            |   **Stratégie**         |           |
+|  | Pessimiste         | Equilibre        | Optimiste        |
+|   | L1         | L2        | L3        |
+|    |            |     **Surface**      |           |
+| Ble        | 100        | 120       | 183.333   |
+| Mais       | 25         | 80        | 66.6667   |
+| Betterave  | 375        | 300       | 250       |
+| **Profit**    | $59,950.00 | $118,600.00 | $167,666.67 |
+
+Le fichier Excel ci-dessous presente les resultats obtenu, ce qui va nous permettre de construitre la **Matrice de gains** associee a chaque **strategie**.
+
+![Modele Resolu sous Excel](/images/biofferme/Bioferme_Strategies.png)
+
+Ceci revient a resoudre le modele deterministe avec des valeurs fixes de : _les valeurs des coefficients de rendement_
+
+- Resoltuion du modele : M1 - Mauvais 
+
+![Modele Resolu sous Excel](/images/biofferme/Bioferme_det_mauvaise.png)
+
+- Resoltuion du modele : M2 - Moyenne 
+
+![Modele Resolu sous Excel](/images/biofferme/Bioferme_deterministe.png)
+
+- Resoltuion du modele : M3 - Bonne 
+
+![Modele Resolu sous Excel](/images/biofferme/Bioferme_det_bonne.png)
+
+2. **Conception de la amatrice de gains :**
+
+On peut des lors concevoir (definir) les strategies associees a ce probleme (3 etats ou scenario possibles) comme suit :
+
+|          | Ble            | Mais           | Betterave      | Scénarios |
+|----------|----------------|----------------|----------------|-----------|
+| Pessimiste| 100 acres       | 25 acres        | 375 acres       |       Mauvaise    |
+| Équilibré   | 120 acres       | 80 acres        | 300 acres       |      Moyenne     |
+| Optimiste | 183.3 acres     | 66.7 acres      | 250 acres       |       Bonne    |
+
+A partir de la, on construit tla matrice de gain comme suit:
+
+**Step 1 :** Le remplassage de la matrice de gain commence par la diagonale qui correspond aux profits optimaux obtenu pour chaque scenario
+
+![Modele Resolu sous Excel](/images/biofferme/Matricegainsstrategiebase.png)
+
+**Step 2 :** On cherche a remplir le tableau de la matrice de gain avec les valeurs fixes de : 1) _les valeurs des coefficients de rendement_, 2) _les valeurs des superficies definies par chaque strategie_
+
+
+
+
