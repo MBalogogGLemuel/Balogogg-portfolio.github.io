@@ -29,9 +29,9 @@ Ainsi, il est claire que les leviers de **decision** de l'agriculteur seront les
 
 - $$ \mathcal{I} = \{ \text{Ble} , \text{Mais} , \text{Betterave}  \}$$ 
 - $$ \mathcal{J} = \mathcal{I} \text{ - } \text{Betterave}$$ 
-- $$ i \in \mathcal{I} \text{ : les differentes cultures plantees par l'agriculteur } $$ 
+- $$ i \in \mathcal{I} $$ : les differentes cultures plantees par l'agriculteur
 
-- $$X_i \text{ : les superficies allouees pour les differentes cultures i }  ( \forall i \in \mathcal{I} )$$
+- $$X_i$$ : les superficies allouees pour les differentes cultures i ($$\forall i \in \mathcal{I}$$ )
 - $$B_j$$ : Quantites achetee pour les differents produits j (Buy) ($$\forall j \in \mathcal{J}$$ )
 
 **Variables de consequence :**
@@ -61,28 +61,48 @@ Ainsi, il est claire que les leviers de **decision** de l'agriculteur seront les
    $$\sum_{i \in \mathcal{I}} X_i = \text{Superficie Totale Disponible} \leq 500 \text{\textit{ Acres}}$$
 
 2. **Contraintes de Vente-Achat-Production de Produits** :
+
    - Contrainte 1 : Productions 
+   
    $$ P_i = r_{\text{i}} . X_{\text{i}}$$
+   
    - Contrainte 2 : Ventes 
+   
    $$ S_i = P_i + B_i - N_i $$
-   - Contrainte 3 : Total des ventes    $$ TS_j = PS_j.S_j $$ 
-   et $$ TS_{\text{betterave}} = 36K_1 + 10K_2$$
+   
+   - Contrainte 3 : Total des ventes    
+
+   $$ TS_j = PS_j.S_j $$ 
+   
+   et 
+   
+   $$ TS_{\text{betterave}} = 36K_1 + 10K_2$$
+   
    - Contrainte 4 : Total de produits disponibles    
+   
    $$ QS_j = P_i +  B_i$$ 
   
    
 
 3. **Satisfaction de la Demande Minimale** :
+
    $$\sum_{i \in \mathcal{I}} (\ r_j.X_j  + B_j \ ) \geq \text{Demande Minimale Mensuelle} = N_j$$
 
 4. **Contraintes Spécifiques à la Culture de la Betterave** :
-   - Contrainte 1 : $$r_{\text{betterave}} . X_{\text{betterave}} = K_1 + K_2 = P_{\text{betterave}}$$
-   - Contrainte 2 : $$ 0 \leq K_1 \leq Quota$$ $$ 0 \leq K_2 \leq M$$ ou plus simplement :   $$36.r_{\text{betterave}} . X_{\text{betterave}} \leq 36K_1 + 10K_2$$  et $$ 0 \leq K_1 \leq Quota$$
+
+   - Contrainte 1 : 
+   
+   $$r_{\text{betterave}} . X_{\text{betterave}} = K_1 + K_2 = P_{\text{betterave}}$$
+   - Contrainte 2 : 
+   
+   $$ 0 \leq K_1 \leq Quota$$ $$ 0 \leq K_2 \leq M$$ ou plus simplement :   $$36.r_{\text{betterave}} . X_{\text{betterave}} \leq 36K_1 + 10K_2$$  et $$ 0 \leq K_1 \leq Quota$$
+
    - Contrainte 3 : $$ N_{\text{Betterave}} = 0$$ 
 
 L'objectif ici etant de maximiser le **profit**, on eccrit la fonction objective suivante:
 
 5. **Objectif de Maximisation des Profits** :
+   
    $$\text{Maximiser } \textbf{   Profit = Ventes - Cout} $$ 
 
 
@@ -137,10 +157,6 @@ Ces résultats montrent une allocation optimale des ressources agricoles pour ma
 
 ![Modele Resolu sous Excel](/images/biofferme/Bioferme_deterministe.png)
 
-<!-- <div align="center">
-        <img src="/images/biofferme/Bioferme_deterministe.png?raw=true" width="480" height="320"/>
-        <br/>
-</div> -->
 
 
 ```GAMS
