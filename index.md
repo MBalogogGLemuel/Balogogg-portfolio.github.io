@@ -16,12 +16,13 @@
 ### Recherche operationnelle - Operations research
 [*<small>BioFerme</small>*](/pages/BioFerme/BioFerme) 
 
+![*<small>BioFerme</small>*](images/biofferme/Bioferme_deterministe.png) 
 <div align="center">
         <img src="images/Optimisation1.png?raw=true" width="480" height="320"/>
         <br/>
 </div>
 
-_L'objectif etant de maximiser les profits tout en balancant avec les contraintes, afin de produire de la biomasse. On utilisera une approche deterministe._ 
+_L'objectif etant de maximiser les profits tout en balancant avec les contraintes, afin de produire de la biomasse. On utilisera une approche deterministe dans un premier temps pour ensuite pousser la reflexion avec eds approches stochastiq...._ 
 
 ---
 
