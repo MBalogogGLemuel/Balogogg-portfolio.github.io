@@ -273,15 +273,15 @@ Le fichier Excel ci-dessous presente les resultats obtenu, ce qui va nous permet
 
 Ceci revient a resoudre le modele deterministe avec des valeurs fixes de : _les valeurs des coefficients de rendement_
 
-- Resoltuion du modele : M1 - Mauvais 
+- Resolution du modele : M1 - Mauvais 
 
 ![Modele Resolu sous Excel](/images/biofferme/Bioferme_det_mauvaise.png)
 
-- Resoltuion du modele : M2 - Moyenne 
+- Resolution du modele : M2 - Moyenne 
 
 ![Modele Resolu sous Excel](/images/biofferme/Bioferme_deterministe.png)
 
-- Resoltuion du modele : M3 - Bonne 
+- Resolution du modele : M3 - Bonne 
 
 ![Modele Resolu sous Excel](/images/biofferme/Bioferme_det_bonne.png)
 
@@ -301,8 +301,13 @@ A partir de la, on construit tla matrice de gain comme suit:
 
 ![Modele Resolu sous Excel](/images/biofferme/Matricegainsstrategiebase.png)
 
-**Step 2 :** On cherche a remplir le tableau de la matrice de gain avec les valeurs fixes de : 1) _les valeurs des coefficients de rendement_, 2) _les valeurs des superficies definies par chaque strategie_
+**Step 2 :** On cherche a remplir le tableau de la matrice de gain avec les valeurs fixes de : 1) _les valeurs des coefficients de rendement_, 2) _les valeurs des superficies definies par chaque strategie_; la seule variable de decision dans ce cas devient la quantite a acheter $B_j$ (la quantite de j a acheter)
 
 
+![Modele Resolu sous Excel](/images/biofferme/Matricedegainscomplet.png)
+
+Voici une explication detaillee du remplissage de la matrice des gains.
+
+![Modele Resolu sous Excel](/images/biofferme/InceritudeExolication.png)
 
 
