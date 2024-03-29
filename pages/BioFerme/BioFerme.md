@@ -27,29 +27,32 @@ Ainsi, il est claire que les leviers de **decision** de l'agriculteur seront les
 
 **Variables de decisions :**
 
-- $\mathcal{I} = \{ \text{Ble} , \text{Mais} , \text{Betterave}  \}$ 
-- $\mathcal{J} = \mathcal{I} \text{ - } \text{Betterave}$ 
-- $i \in \mathcal{I}$ : les differentes cultures plantees par l'agriculteur
-- $X_i$ : les superficies allouees pour les differentes cultures i ($\forall i \in \mathcal{I}$ )
-- $B_j$ : Quantites achetee pour les differents produits j (Buy) ($\forall j \in \mathcal{J}$ )
+- $$ \mathcal{I} = \{ \text{Ble} , \text{Mais} , \text{Betterave}  \}$$ 
+- $$ \mathcal{J} = \mathcal{I} \text{ - } \text{Betterave}$$ 
+- $$ i \in \mathcal{I} \text{ : les differentes cultures plantees par l'agriculteur } $$ 
+
+- $$X_i \text{ : les superficies allouees pour les differentes cultures i }  ( \forall i \in \mathcal{I} )$$
+- $$B_j$$ : Quantites achetee pour les differents produits j (Buy) ($$\forall j \in \mathcal{J}$$ )
 
 **Variables de consequence :**
 
-- $S_i$ : Quantites vendue pour les differents produits i (Sales) -- ou $Ecarts_i$ -- ($\forall i \in \mathcal{I}$ )
-- $P_i$ : Quantites cultivees pour les differents produits i (Production) ($\forall i \in \mathcal{I}$ )
-- $TS_i$ : Total des vente pour les differents produits i (Total sales) ($\forall i \in \mathcal{I}$ )
-- $QS_i$ : Quantite disponibles des differents produits i (Quantity in stock) ($\forall i \in \mathcal{I}$ )
-- $K_1$ et $K_2$ : Quantite de betterave produite, respectivement la quantite en dessous du quota et celle au dessus. 
+- $$S_i$$ : Quantites vendue pour les differents produits i (Sales) -- ou $$Ecarts_i$$ -- ($$\forall i \in \mathcal{I}$$ )
+- $$P_i$$ : Quantites cultivees pour les differents produits i (Production) ($$\forall i \in \mathcal{I}$$ )
+- $$TS_i$$ : Total des vente pour les differents produits i (Total sales) ($$\forall i \in \mathcal{I}$$ )
+- $$QS_i$$ : Quantite disponibles des differents produits i (Quantity in stock) ($$\forall i \in \mathcal{I}$$ )
+- $$K_1$$ et $$K_2$$ : Quantite de betterave produite, respectivement la quantite en dessous du quota et celle au dessus. 
 
 
 **Parametres :**
 
-- $r_i$ : Rendements de production pour les differents produits i ($\forall i \in \mathcal{I}$ )
-- $PS_i$ : Prix de vente pour les differents produits i (Price of sale) ($\forall i \in \mathcal{I}$ )
-- $PB_j$ : Prix d'achat pour les differents produits j (Price of buy) ($\forall j \in \mathcal{J}$ )
-- $C_i$ : Couts de production des differents produits i par Acre (Cost of production) ($\forall i \in \mathcal{I}$ )
-- $N_i$ : Besoins de la ferme en produits j (Needs of products) ($\forall j \in \mathcal{J}$ )
-- $Quota$ : Quota defini par le commission europenne sur le produit _Betterave_
+- $$r_i$$ : Rendements de production pour les differents produits i ($$\forall i \in \mathcal{I}$$ )
+- $$PS_i$$ : Prix de vente pour les differents produits i (Price of sale) ($$\forall i \in \mathcal{I}$$ )
+- $$PB_j$$ : Prix d'achat pour les differents produits j (Price of buy) ($$\forall j \in \mathcal{J}$$ )
+- $$C_i$$ : Couts de production des differents produits i par Acre (Cost of production) ($$\forall i \in \mathcal{I}$$ )
+- $$N_i$$ : Besoins de la ferme en produits j (Needs of products) ($$\forall j \in \mathcal{J}$$ )
+- $$Quota$$ : Quota defini par le commission europenne sur le produit _Betterave_
+
+
 
 À partir des informations recueillies, nous écrivons les équations qui décrivent le problème. Cela inclut les contraintes d'équilibre des superficies cultivées, les contraintes de vente, d'achat et de production, ainsi que les contraintes spécifiques à la culture de la betterave. Nous formulons également la fonction objectif pour maximiser les profits. Voici les équations de contraintes de base qui définissent ce modèle :
 
