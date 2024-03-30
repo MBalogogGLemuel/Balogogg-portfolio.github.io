@@ -1,116 +1,68 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% seo %}
-  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-  <!--[if lt IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <![endif]-->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    /* Styles CSS pour la section de la photo */
-    .hero {
-      background-color: #f0f0f0;
-      padding: 60px 0;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    .hero__content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    .hero__text {
-      flex: 1;
-    }
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        
+        {% if site.logo %}
+          <img src="{{site.logo | relative_url}}" alt="Logo" />
+        {% endif %}
 
-    .hero__title {
-      font-size: 36px;
-      color: #333;
-    }
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-    .hero__subtitle {
-      font-size: 18px;
-      color: #666;
-    }
+        {% if site.github.is_project_page %}
+        <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
+        {% endif %}
 
-    .hero__image {
-      flex: 1;
-      text-align: center;
-    }
+        {% if site.github.is_user_page %}
+        <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
+        {% endif %}
 
-    .hero__image img {
-      max-width: 100%;
-      border-radius: 50%; /* Pour une forme circulaire */
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Ombre douce */
-      transition: transform 0.3s ease; /* Animation de transition */
-    }
+        {% if site.show_downloads %}
+        <ul class="downloads">
+          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
+          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
+        </ul>
+        {% endif %}
+      </header>
+      <section>
 
-    /* Effet de survol pour la photo */
-    .hero__image img:hover {
-      transform: scale(1.05); /* Zoom au survol */
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-    {% if site.logo %}
-    <img src="{{site.logo | relative_url}}" alt="Logo" width="60" height="60">
-    {% endif %}
-    <p>{{ site.description | default: site.github.project_tagline | strip_html }}</p>
-    {% if site.github.is_project_page %}
-    <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
-    {% endif %}
-    {% if site.github.is_user_page %}
-    <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
-    {% endif %}
-    {% if site.show_downloads %}
-    <ul class="downloads">
-      <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
-      <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
-      <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
-    </ul>
-    {% endif %}
-  </header>
-  <!-- Section pour la photo -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__content">
-        <div class="hero__text">
-          <h2 class="hero__title">{{ site.title }}</h2>
-          <p class="hero__subtitle">{{ site.description | strip_html }}</p>
-        </div>
-        <div class="hero__image">
-          <img src="{{site.logo | relative_url}}" alt="Photo de profil">
-        </div>
-      </div>
+      {{ content }}
+
+      </section>
+      <footer>
+        {% if site.github.is_project_page %}
+        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-  </section>
-  <!-- Section pour le contenu provenant d'une autre page Markdown -->
-  <section>
-    {% include_relative votre_page_markdown.md %}
-  </section>
-  <footer>
-    {% if site.github.is_project_page %}
-    <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    {% if site.google_analytics %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+    </script>
     {% endif %}
-    <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-  </footer>
-  <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-  {% if site.google_analytics %}
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', '{{ site.google_analytics }}', 'auto');
-    ga('send', 'pageview');
-  </script>
-  {% endif %}
-</body>
+  </body>
 </html>
