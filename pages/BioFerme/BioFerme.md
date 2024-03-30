@@ -301,7 +301,7 @@ A partir de la, on construit tla matrice de gain comme suit:
 
 ![Modele Resolu sous Excel](/images/biofferme/Matricegainsstrategiebase.png)
 
-**Step 2 :** On cherche a remplir le tableau de la matrice de gain avec les valeurs fixes de : 1) _les valeurs des coefficients de rendement_, 2) _les valeurs des superficies definies par chaque strategie_; la seule variable de decision dans ce cas devient la quantite a acheter $B_j$ (la quantite de j a acheter)
+**Step 2 :** On cherche a remplir le tableau de la matrice de gain avec les valeurs fixes de : 1) _les valeurs des coefficients de rendement_, 2) _les valeurs des superficies definies par chaque strategie_; la seule variable de decision dans ce cas devient la quantite a acheter Bj (la quantite de j a acheter)
 
 
 ![Modele Resolu sous Excel](/images/biofferme/Matricedegainscomplet.png)
@@ -327,6 +327,7 @@ Dans notre cas, illustrons ce qui est enonce ci-dessus:
 ![Modele Resolu sous Excel](/images/biofferme/Laplace.png)
 
 Ici, on calcule la moyenne des gains de chaque strategie (protefeuille, ou produit) pour l'ensemble des etats tel que : 
+
 $$\text{Moy}_i =  \frac{1}{N} \sum_{j \in \text{Etats} } G_{i,j}$$
 
 Ensuite, la strategie ayant la plus grande moyenne est la strategie **Optimiste avec une moyenne de G = $ 107 683.33** car elle est la plus grande. En effet, du fait, qu'aucune strategie ne donne exactement cette valeur, on evolue dans une incertitude encore plus importante puisque que une cette valeur ne _reflete pas la realite_: Savage (2008) compare cette approche à avoir 1 enfant et demi par femme.
@@ -345,6 +346,7 @@ Dans notre cas, illustrons ce qui est enonce ci-dessus:
 ![Modele Resolu sous Excel](/images/biofferme/Maximin.png)
 
 Ici, on calcule la valeur minimale des gains de chaque strategie (protefeuille, ou produit) sur l'ensemble des etats tel que : 
+
 $$\text{Min}_i =  \text{Min} \{ G_{i,j} \ | \ \forall \ j \in \mathcal{J} \} $$
 
 Ensuite, la strategie ayant la plus grande valeur **minimale** est la strategie **Pessimiste avec une valeur de G = $ 59 950** car elle est la plus grande. Cependant, on constate qu'il est possible d'avoir de meilleur gain avec une strategie : comportement systematique frileux.
@@ -362,6 +364,7 @@ Dans notre cas, illustrons ce qui est enonce ci-dessus:
 ![Modele Resolu sous Excel](/images/biofferme/maximax.png)
 
 Ici, on calcule la valeur maximale des gains de chaque strategie (protefeuille, ou produit) sur l'ensemble des etats tel que : 
+
 $$\text{Min}_i =  \text{Max} \{ G_{i,j} \ | \ \forall \ j \in \mathcal{J} \} $$
 
 Ensuite, la strategie ayant la plus grande valeur **minimale** est la strategie **Optimiste avec une valeur de G = $ 167 666.7** car elle est la plus grande. Cependant, le decideur est expose a un grand risque en cas de mauvaise prevision.
@@ -379,11 +382,22 @@ $$ \text{Regret}_{i,j} = \text{ Max } \{ G_{i,j} \} \ - \ G_{i,j} \ (\forall \ i
 ![Modele Resolu sous Excel](/images/biofferme/minimax.png)
 
 Ici, on calcule pour chaque strategie le regret maximal : 
+
 $$ \text{Regret Max}_{i} = \text{ Max } \{ Regret_{i,j} \ (\forall \ i \in \mathcal{I}) \}    $$
 
 Ensuite, la strategie ayant la plus grande valeur **minimale** du regret maximal est la strategie **Optimiste avec une valeur de Regret max = $ 12 250** (la plus petite). Elle est tres appreciee en theorie de la decision.
 
 ![Modele Resolu sous Excel](/images/biofferme/minimax2.png)
 
-**Approche 5 : Laplace Bayes** 
+**Approche 5 : Hurwicz - Appreciation du decideur** 
 
+Cette approche se base sur l'expertise + ou - biaisee du decideur, de par son aversion au risque ou pas. 
+
+Apres avoir identifier les Max et et les Min de chaque strategie, on trouve la somme ponderee de ceux-ci a partir de la preference du decideur:
+
+$$ \text{Profit pour une Decision} = a \cdot Min_i \ + \ (a - 1) \cdot Max_i   $$
+
+- a = 0.8 : Averse au risque
+- a = 0.3 : Aime le risque 
+
+![Modele Resolu sous Excel](/images/biofferme/risque.png)
