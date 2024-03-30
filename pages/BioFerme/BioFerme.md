@@ -361,7 +361,7 @@ Ici, le produit ou la strategie qui retiendra notre attention sera celle qui aur
 
 Dans notre cas, illustrons ce qui est enonce ci-dessus:
 
-![Modele Resolu sous Excel](/images/biofferme/maximax.png)
+![Modele Resolu sous Excel](/images/biofferme/Maximax.png)
 
 Ici, on calcule la valeur maximale des gains de chaque strategie (protefeuille, ou produit) sur l'ensemble des etats tel que : 
 
@@ -379,7 +379,7 @@ Il s'agit de la difference entre un gain et la plus grande valeur possible de ga
 
 $$ \text{Regret}_{i,j} = \text{ Max } \{ G_{i,j} \} \ - \ G_{i,j} \ (\forall \ i \in \mathcal{I} )     $$
 
-![Modele Resolu sous Excel](/images/biofferme/minimax.png)
+![Modele Resolu sous Excel](/images/biofferme/Minimax.png)
 
 Ici, on calcule pour chaque strategie le regret maximal : 
 
@@ -387,7 +387,7 @@ $$ \text{Regret Max}_{i} = \text{ Max } \{ Regret_{i,j} \ (\forall \ i \in \math
 
 Ensuite, la strategie ayant la plus grande valeur **minimale** du regret maximal est la strategie **Optimiste avec une valeur de Regret max = $ 12 250** (la plus petite). Elle est tres appreciee en theorie de la decision.
 
-![Modele Resolu sous Excel](/images/biofferme/minimax2.png)
+![Modele Resolu sous Excel](/images/biofferme/Minimax2.png)
 
 **Approche 5 : Hurwicz - Appreciation du decideur** 
 
