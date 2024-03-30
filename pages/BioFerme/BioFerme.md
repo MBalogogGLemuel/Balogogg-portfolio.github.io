@@ -311,3 +311,79 @@ Voici une explication detaillee du remplissage de la matrice des gains.
 ![Modele Resolu sous Excel](/images/biofferme/InceritudeExolication.png)
 
 
+3. **Prise de decision :**
+
+Plusieurs approches existent pour la prise de decision une fois que l'on a defini la matrice de gain. On presentera les plus populaires et leurs avantages mais aussi leur limites. (Pour une appication en finance que j'ai vraiment aimee je vous recommande ce [blog](https://madamefinance.wordpress.com/2014/06/09/173/).
+
+**Approche 1 : Laplace Bayes - La moyenne** 
+
+
+Ici, le produit ou la strategie qui retiendra notre attention elle qui sera le plus proche ou egal a la moyenne. L'inconvenient, est que:
+
+- il peut souvent etre difficile d'avoir un produit dont le gain est strictement egal a la moyenne: on parle d'un risque de representation fausse de la realite
+
+Dans notre cas, illustrons ce qui est enonce ci-dessus:
+
+![Modele Resolu sous Excel](/images/biofferme/Laplace.png)
+
+Ici, on calcule la moyenne des gains de chaque strategie (protefeuille, ou produit) pour l'ensemble des etats tel que : 
+$$\text{Moy}_i =  \frac{1}{N} \sum_{j \in \text{Etats} } G_{i,j}$$
+
+Ensuite, la strategie ayant la plus grande moyenne est la strategie **Optimiste avec une moyenne de G = $ 107 683.33** car elle est la plus grande. En effet, du fait, qu'aucune strategie ne donne exactement cette valeur, on evolue dans une incertitude encore plus importante puisque que une cette valeur ne _reflete pas la realite_: Savage (2008) compare cette approche à avoir 1 enfant et demi par femme.
+
+![Modele Resolu sous Excel](/images/biofferme/Laplace1.png)
+
+
+**Approche 2 : Wald - Maximin** 
+
+Ici, le produit ou la strategie qui retiendra notre attention sera celle qui aura le meilleur resulat dans le pire scenario possible. L'inconvenient, est que:
+
+- il occulte parfois les opportunites possible parcequ'il ne se focalise que sur les pertes probables: la consequence de cette approche en economie serait de freiner l'innovation afin de garantir une stabilite certaine (comportement systematiquement pessimiste).
+
+Dans notre cas, illustrons ce qui est enonce ci-dessus:
+
+![Modele Resolu sous Excel](/images/biofferme/Maximin.png)
+
+Ici, on calcule la valeur minimale des gains de chaque strategie (protefeuille, ou produit) sur l'ensemble des etats tel que : 
+$$\text{Min}_i =  \text{Min} \{ G_{i,j} \ | \ \forall \ j \in \mathcal{J} \} $$
+
+Ensuite, la strategie ayant la plus grande valeur **minimale** est la strategie **Pessimiste avec une valeur de G = $ 59 950** car elle est la plus grande. Cependant, on constate qu'il est possible d'avoir de meilleur gain avec une strategie : comportement systematique frileux.
+
+![Modele Resolu sous Excel](/images/biofferme/Maximin2.png)
+
+**Approche 3 : Maximax** 
+
+Ici, le produit ou la strategie qui retiendra notre attention sera celle qui aura le meilleur resulat dans le meilleur scenario possible. L'inconvenient, est que:
+
+- il surestime l'ooportunite ce qui expose le decideur a un tres grand risque: risque eleve en cas de de mauvaise prediction.
+
+Dans notre cas, illustrons ce qui est enonce ci-dessus:
+
+![Modele Resolu sous Excel](/images/biofferme/maximax.png)
+
+Ici, on calcule la valeur maximale des gains de chaque strategie (protefeuille, ou produit) sur l'ensemble des etats tel que : 
+$$\text{Min}_i =  \text{Max} \{ G_{i,j} \ | \ \forall \ j \in \mathcal{J} \} $$
+
+Ensuite, la strategie ayant la plus grande valeur **minimale** est la strategie **Optimiste avec une valeur de G = $ 167 666.7** car elle est la plus grande. Cependant, le decideur est expose a un grand risque en cas de mauvaise prevision.
+
+![Modele Resolu sous Excel](/images/biofferme/maximax2.png)
+
+**Approche 4 : Minimax Regret - Leonard Savage (1954) , von Neumann (1926) et Landsheere, Gilbert (1979)** 
+
+Ici, le produit ou la strategie qui retiendra notre attention sera celle qui aura le meilleur (le plus petit) regret parmi les regrets extremes. Dans un premier temps, on va calculer les regrets max de chaque gain i-j.
+
+Il s'agit de la difference entre un gain et la plus grande valeur possible de gain associee a l'etat j de ce gain:
+
+$$ \text{Regret}_{i,j} = \text{ Max } \{ G_{i,j} \} \ - \ G_{i,j} \ (\forall \ i \in \mathcal{I} )     $$
+
+![Modele Resolu sous Excel](/images/biofferme/minimax.png)
+
+Ici, on calcule pour chaque strategie le regret maximal : 
+$$ \text{Regret Max}_{i} = \text{ Max } \{ Regret_{i,j} \ (\forall \ i \in \mathcal{I}) \}    $$
+
+Ensuite, la strategie ayant la plus grande valeur **minimale** du regret maximal est la strategie **Optimiste avec une valeur de Regret max = $ 12 250** (la plus petite). Elle est tres appreciee en theorie de la decision.
+
+![Modele Resolu sous Excel](/images/biofferme/minimax2.png)
+
+**Approche 5 : Laplace Bayes** 
+
