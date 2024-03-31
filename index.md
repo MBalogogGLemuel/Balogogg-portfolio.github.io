@@ -38,7 +38,7 @@ _L'objectif etant de maximiser les profits tout en balancant avec les contrainte
 ---
 
 
-[*<small>Flights delays and Cancellation prediction</small>*](/pages/deploiement_ia) 
+[*<small>Flights delays and Cancellation prediction</small>*](/pages/FlightsDelaysandCancellation/FlightsDelays) 
 
 <div align="center">
         <img src="images/airport-cancellation-board.jpg?raw=true" width="480" height="320"/>
