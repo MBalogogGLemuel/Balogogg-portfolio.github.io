@@ -1,6 +1,6 @@
 # Exploring Flight Data for Predictive Analysis
 
-In this blog post, we delve deep into an extensive exploratory data analysis (EDA) of a vast dataset containing comprehensive flight information. With 3 million rows and 32 columns, this dataset provides a wealth of insights into various aspects of flight operations, including departure/arrival times, delays, cancellations, and more. The report for this project is here, and just there for the EDA code, the baseline model right over [here](/pages/FlightsDelaysandCancellation).
+In this blog post, we delve deep into an extensive exploratory data analysis (EDA) of a vast dataset containing comprehensive flight information. With 3 million rows and 32 columns, this dataset provides a wealth of insights into various aspects of flight operations, including departure/arrival times, delays, cancellations, and more. The report for this project is [here](/pages/FlightsDelaysandCancellation/Machine_Learning_EDA_Presentation.pdf), and just follow the link for the [EDA](/pages/FlightsDelaysandCancellation/1-%20EDA.ipynb) code, the baseline model right over [here](/pages/FlightsDelaysandCancellation/2-%20Model.ipynb).
 
 ## Introduction
 
