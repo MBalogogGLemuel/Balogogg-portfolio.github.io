@@ -401,3 +401,75 @@ $$ \text{Profit pour une Decision} = a \cdot Min_i \ + \ (a - 1) \cdot Max_i   $
 - a = 0.3 : Aime le risque 
 
 ![Modele Resolu sous Excel](/images/biofferme/risque.png)
+
+## Modèle Mathématique pour la Gestion Agricole : Etape 3 - Decision selon une probabilite d'apparution des etats/scenarios (Modele stochastique)
+
+Nous terminons ce projet en introduisant le concept de modele stochastique a proprement parler. Toutefois, il est important de montrer le caractere imperatif de suivre la demarche suivie tout au long de ce projet:
+
+ 1. Modeliser et resoudre le probleme selon une approche deterministique s'il y'a lieu.
+ 2. Identifier les differents scenarios, les resourdre et concevoir la matrice de gains
+ 3. Proposer le modele stochastique final global et le resoudre
+ 4. Identifier la VEIP (Valeur Esperee d'une Information parfaite) qui permet d'apprecier une offre exterieur (consultant, logiciel prestataire, ... ) 
+
+
+ Afin de mener a bien l'etape 3 et 4, il est vital de rappeler le contexte de la prise de decision stochatique:
+ - un choix (ou ensemble de choix) prealable a ete fait par le decideur sans etre affecte par l'incertitude: en occurence, la surperficie de culture pour chaque cereale
+ - selon l'etat observe au court du temps, le decideur, peut s'ajuster (variables de recours : Quantite a vendre et Quantite a acheter par produit)
+
+ Pour des raisons de simplification, nous ecrivons un modele stochatique allege (identique) de celui presente jusqu'ici (suppression des variables de consequence) :
+
+ $$ \text{Maximiser Profit} = \frac{1}{3} \cdot \left(\sum_{i \in \mathcal{I}} PS_{i} \cdot S_{i,k} - \sum_{j \in \mathcal{J}} PB_j \cdot B_{j,k}\right)  - \sum_{i \in \mathcal{I}} C_i \cdot X_i  $$
+
+$$\sum_{i \in \mathcal{I}} X_i \leq 500$$
+
+$$S_{i,k} = r_{i,k} \cdot X_i + B_{i,k} - N_i \quad (\forall i \in \mathcal{I}) $$
+
+$$\sum_{i \in \mathcal{I}} (r_{i,k} \cdot X_j + B_{i,k})  \geq N_j$$
+
+$$ 36.S_{\text{betterave}} \leq 36K_1 + 10K_2$$
+
+$$S_{\text{betterave}} = K_1 + K_2 $$
+
+$$ 0 \leq K_1 \leq Quota$$
+
+$$ X_i, B_i, K_1, K_2 \ \geq \ 0 \text{ pour tout } i \in \mathcal{I} $$
+
+On peut ainsi modifier notre matrice de gain en rajoutant une nouvelle colonne : **Equivalent Certain** qui represnte la valeur esperee pour chaque strategie. On ecrit les equations associee:
+
+
+$$ \text{Equivalent Certain}_1 = EC_{Pessimiste} = Prob_{Mauvais}.\text{Gain}_{Pessimiste,Mauvais} + Prob_{Moyen}.\text{Gain}_{Pessimiste,Moyen} + Prob_{Bon}.\text{Gain}_{Pessimiste,Bon}  $$
+$$ \text{Equivalent Certain}_2 = EC_{Equilibre} = Prob_{Equilibre}.\text{Gain}_{Equilibre,Mauvais} + Prob_{Moyen}.\text{Gain}_{Equilibre,Moyen} + Prob_{Bon}.\text{Gain}_{Equilibre,Bon}  $$
+$$ \text{Equivalent Certain}_3 = EC_{Optimiste} = Prob_{Mauvais}.\text{Gain}_{Optimiste,Mauvais} + Prob_{Moyen}.\text{Gain}_{Optimiste,Moyen} + Prob_{Bon}.\text{Gain}_{Optimiste,Bon}  $$
+
+Les **profits esperes pour chaque strategie** correspondent a :
+
+$$EC_{Pessimiste} = \frac{1}{3} \cdot \left( \$ \ 59,950 + \$ \ 86,600 + \ \$ \ 113,250 
+ \right) = \ \$ \ 86,600 $$
+
+$$EC_{Equilibre} = \frac{1}{3} \cdot \left( \$ \ 55,120 + \$ \ 118,600 + \ \$ \ 148,000 
+ \right) = \ \$ \ 107,240 $$
+
+$$EC_{Optimiste} = \frac{1}{3} \cdot \left( \$ \ 47,700 + \$ \ 107,683 + \ \$ \ 167,666.67 
+ \right) = \ \$ \ 107,683.33 $$
+
+On peut decider de faire le choix plutot sur la base du profit general espere (la solution du modele stochatique) :
+
+On optient le profit espere :
+
+$$Profit(E)  = \$ \ 108,390$$
+
+A partir de ca, on peut trouver le **profit espere pour chaque etat (scenario)** :
+
+$$ Profit(E)  = \frac{1}{3} \cdot \$ \ 108,390 =  \$ \ 36,130$$
+
+On obtient toujours le meme resultat peu importe le scenario (etat) parceque les etats sont equi-probables. Tandis que le **profit sous information parfaite** est le profit que le decideur obtiendrait s'il maitrisait l'etat en avance multiplie par la probabilite d'occurence du scenario; ce qui reviendrait a prendre la meilleure decision pour un scenariio donne. On ecrit donc :
+
+$$\text{Profit sous information parfaite } = \frac{1}{3} \cdot \$ \ 59,950 \ + \frac{1}{3} \cdot  \$ \ 118,600 \ + \frac{1}{3} \cdot \ \$ \ 167,666.67 = \ \$ \ 115,405.56 $$
+
+On calcule donc le **VEIP** :
+
+$$ \text{VEIP } =  \ \$ \ 115,405.56 \ - \$ \ 108,390 \ = \$ \ 7,015.56  $$
+
+
+
+![Modele Resolu sous Excel](/images/biofferme/StochastiqueBioferme.png)
