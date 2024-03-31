@@ -194,7 +194,7 @@ Variables
     K2      Quantité de betterave produite au-dessus du quota
     Profit  Profit total;
 
-Positive Variables X, B;
+Positive Variables X, B, K1, K2;
 
 Equations
     Eq1     Equilibre de la superficie cultivée
@@ -206,9 +206,9 @@ Eq1..   sum(I, X(I)) =l= 500;
 
 Eq2(I).. P(I) =e= r(I) * X(I);
 
-Eq3(J).. sum(I$(ord(I) <= card(J)), r(I) * X(I) + B(I)) =g= N(J);
+Eq3(J).. sum((I), r(I) * X(I) + B(I)) =g= N(I);
 
-Eq4..   sum(I$(ord(I) = card(I)), r("Betterave") * X("Betterave")) =g= 36 * K1 + 10 * K2;
+Eq4..   r("Betterave") * X("Betterave") =g= 36 * K1 + 10 * K2;
 
 Profit =e= sum(I, PS(I) * S(I)) - (sum(I, C(I) * X(I)) + sum(J, PB(J) * B(J)));
 
