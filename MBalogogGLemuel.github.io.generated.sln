@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages", "pages", "{068E1273-5704-48EE-B363-4FC5B7418EBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Computer Programming Training", "Computer Programming Training", "{9DE0F79A-5881-4330-B963-1E3EE54BBDAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp DotNET", "CSharp DotNET", "{00C29073-7177-4C0D-92DD-F445303CB665}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P1", "pages\Computer Programming Training\CSharp DotNET\P1\P1.csproj", "{6370A46C-B1B3-4C75-A296-763050FC139C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6370A46C-B1B3-4C75-A296-763050FC139C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6370A46C-B1B3-4C75-A296-763050FC139C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6370A46C-B1B3-4C75-A296-763050FC139C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6370A46C-B1B3-4C75-A296-763050FC139C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9DE0F79A-5881-4330-B963-1E3EE54BBDAB} = {068E1273-5704-48EE-B363-4FC5B7418EBB}
+		{00C29073-7177-4C0D-92DD-F445303CB665} = {9DE0F79A-5881-4330-B963-1E3EE54BBDAB}
+		{6370A46C-B1B3-4C75-A296-763050FC139C} = {00C29073-7177-4C0D-92DD-F445303CB665}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B7F536E-F6CD-4AC8-B390-0641C2A23C5A}
+	EndGlobalSection
+EndGlobal

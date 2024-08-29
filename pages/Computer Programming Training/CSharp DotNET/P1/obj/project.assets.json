@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\georg\\Desktop\\Personal  training\\CSharp DotNET\\P1\\P1.csproj",
+      "projectUniqueName": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\MBalogogGLemuel.github.io\\pages\\Computer Programming Training\\CSharp DotNET\\P1\\P1.csproj",
       "projectName": "P1",
-      "projectPath": "C:\\Users\\georg\\Desktop\\Personal  training\\CSharp DotNET\\P1\\P1.csproj",
+      "projectPath": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\MBalogogGLemuel.github.io\\pages\\Computer Programming Training\\CSharp DotNET\\P1\\P1.csproj",
       "packagesPath": "C:\\Users\\georg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\georg\\Desktop\\Personal  training\\CSharp DotNET\\P1\\obj\\",
+      "outputPath": "C:\\Users\\georg\\OneDrive\\Documents\\GitHub\\MBalogogGLemuel.github.io\\pages\\Computer Programming Training\\CSharp DotNET\\P1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\georg\\AppData\\Roaming\\NuGet\\NuGet.Config"
