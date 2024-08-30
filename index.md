@@ -61,6 +61,7 @@ _L'objectif etant de maximiser les profits tout en balancant avec les contrainte
 ### Cours Statistique
 
 - [Notions en Appentissage Statistiques](/pages/NotionsStatistiques/Introduction_Apprentissage_statistique)
+
 <!-- - [Project 2 Title](http://example.com/)
 - [Project 3 Title](http://example.com/)
 - [Project 4 Title](http://example.com/)
