@@ -57,23 +57,23 @@ _L'objectif etant de maximiser les profits tout en balancant avec les contrainte
 </div>
 
 ---
-<!--
-### Category Name 2
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
+### Cours Statistique
+
+- [Notions en Appentissage Statistiques](/pages/NotionsStatistiques/Introduction_Apprentissage_statistique)
+<!-- - [Project 2 Title](http://example.com/)
 - [Project 3 Title](http://example.com/)
 - [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+- [Project 5 Title](http://example.com/) -->
 
----
+<!-- --- -->
 
----
+<!-- ---
 ### Tout savoir sur Git
 [Project 1 Title](/pages/sample_page_copy)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
+ -->
 
--->
 
 
 ---
