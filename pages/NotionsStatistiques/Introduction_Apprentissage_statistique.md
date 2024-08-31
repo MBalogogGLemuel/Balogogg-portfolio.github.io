@@ -10,6 +10,7 @@ Soient $S$ ou $\Omega$ l'espace d'echantillonnage (encore appele l'espace d'obse
 ![Ensembles2](/images/Prob2.png)
 
 Quelques proprietes :
+- <script type="math/tex">P(\Omega) = 1</script>
 - $P(\Omega) = 1$
 - $P(\varnothing) = 0$
 - $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
