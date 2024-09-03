@@ -10,7 +10,9 @@ Soient $S$ ou $\Omega$ l'espace d'echantillonnage (encore appele l'espace d'obse
 ![Ensembles2](/images/Prob2.png)
 
 Quelques proprietes :
-- <script type="math/tex">P(\Omega) = 1</script>
+
+<script type="math/tex">P(\Omega) = 1</script>
+
 - $P(\Omega) = 1$
 - $P(\varnothing) = 0$
 - $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
@@ -141,10 +143,85 @@ Il est important de rappeler quelques notions afin de facilite la comprehension 
 
 Pour mener a bien une inference, il faut suivre les etapes suivantes bien precise. Pour mieux apprehender cette approche, etudions le cas suivant :
 
-$$\text{"Imaginons qu'une entreprise de fabrication de boulons souhaite tester si le}$$ 
+Exemple application : 
+---
+  $$\text{"Imaginons qu'une entreprise de fabrication de boulons souhaite tester si le}$$ 
 $$\text{diamètre moyen de ses boulons est de 10 mm; pour ce faire, un échantillon de 30 boulons }$$ 
 $$\text{est prélevé, et leur diamètre moyen est de 10,2 mm, avec un écart-type de 0,3 mm."}$$
 
 1. **Formuler les hypothes** : Ceci consiste a definir 2 hypothese qui sous-tendent notre question de recherche, notammes HO (hypothese d'egalite = ) et H1 (hypothese de # ) . 
 
-Exemple : 
+**H0 :** Le diametre des boulons est de 10 mm en moyenne ( $\mu = 10 \ mm$  )
+
+**H1 :** Le daimetre n'est pas de 10 mm en moyenne ( $\mu \neq 10 \ mm $ )
+
+2. **Definir le niveau de signification ( $\alpha$ )** : C'est la probabilite d'erreur de premiere espece.
+
+
+| **Résultat réel**             | **Décision : Ne pas rejeter \(H_0\)**              | **Décision : Rejeter \(H_0\) (Accepter \(H_1\))**   |
+|-------------------------------|----------------------------------------------------|-----------------------------------------------------|
+| **Réel : \(H_0\) est vrai**   | Décision correcte   ( $1 - \alpha : \text{Niv de conf}$ )                              | **Erreur de première espèce** (\(\alpha\))         |
+| **Réel : \(H_1\) est vrai**   | **Erreur de deuxième espèce** (\(\beta\))         | Décision correcte   ( $1 - \beta : \text{Puiss du test}$ )                              |
+
+3. **Calcule de la statistique de Test** : Selon chaque type de test (Student, Wald, Annova,...) il existe une _statistique de test_ associee. Dans notre exemple il s'agit d'un test basique de 
+Student, dont la statistique de test est _t_ :
+
+$$t = \frac{\overline{x} - \mu_0}{\frac{s}{\sqrt{n}}} \quad \mu_0 : \text{Valeur supposee de la moyenne theorique (population)} $$
+Donnees :
+- Taille echantillon $n$ = 30
+- Moyenne echantillon : $\overline{x}$ = 10.2 mm
+- Ecart-type $s$ = 0.3 mm
+- Moyenne theorique supposee : $\mu_0 = 10\ mm$
+- Niveau de signification $\alpha$ = 5%
+
+$$t = \frac{10.2 - 10}{\frac{0.3}{\sqrt{30}}} = \frac{0.2}{0.5477} = 3.65$$
+
+4. **Decision :** Il faut decider du rejet ou de l'acceptation de l'hypothese H0
+
+- **Methode de la valeur critique :**
+
+**Note** : Avant de poursuivre, on va s'assurer du type de test (bilateral ou unilateral) actuel ; on a :
+
+> Bilateral : on se demande si la moyenne theorique correspond a la moyenne theorique estimee a gauche ou a droite , on cherchera la valeur critique :
+
+$$t_{29 , \frac{\alpha}{2}} = t_{29 , 0.025}$$
+
+> Unilateral : On s'interroge uniquement sur l'appartenance de la moyenne theorique  a l'interval _soit_ a gauche , _soit_ a droite uniquement par rapport a la valeur centrale (moyenne theorique estimee); on cherchera la valeur critique :
+
+$$t_{29 , \alpha} = t_{29 , 0.05}$$
+
+![LoiStudent](/images/Prob4_Tabledestudent.png)
+
+Dans notre cas on a un test **bilaterale**; on a :
+
+$$\text{Valeur critique} = t_{29 , \frac{\alpha}{2}} = t_{29 , 0.025} = 2.045$$
+
+- **Methode de la p-valeur :**
+
+La p-valeur représente la probabilité d'obtenir une statistique de test au moins aussi extrême que celle observée, sous l'hypothèse nulle.
+
+Comme nous avons un test bilatéral (on teste 𝜇 ≠ 10 mm ), nous devons calculer la probabilité de trouver une valeur de 
+𝑡 aussi extrême que 3,65, dans les deux queues de la distribution 𝑡 de Student avec 𝑛 − 1 = 29 degrés de liberté.
+
+La p-valeur est obtenue en calculant 2.𝑃(𝑇>3,65) où 𝑇 suit une distribution t de Student avec 29 degrés de liberté.
+
+D'après les tables de la distribution 
+𝑡 de Student ou en utilisant un logiciel statistique, la p-valeur pour 𝑡 = 3.65 avec 29 degrés de liberté est très petite, environ 
+𝑝 ≈ 0,0011.
+
+$$𝑝 ≈ 0,0011 $$
+$$\text{tel que } 2.P(T>3,65), \text{où 
+𝑇 suit une distribution 𝑡}$$ 
+$$\text{de Student avec 29 degrés de liberté}$$
+
+**Note** : En utilisant la p-valeur, nous avons pu déterminer que la différence observée (un diamètre moyen de 10,2 mm dans l'échantillon contre 10 mm dans l'hypothèse nulle) est statistiquement significative. En d'autres termes, une telle différence est très peu probable si le diamètre moyen réel était vraiment de 10 mm. Donc, nous avons des raisons de croire que le diamètre moyen des boulons est effectivement différent de 10 mm.
+
+Choix et **Decision** :
+
+
+![Decisions](/images/Prob5_Decisions.png)
+
+5. **Conclusion :** 
+Puisque 1) la _p-valeur_ est < au niveau de signification (0.001 < 0.05) , et 2) la statististique de test est > Valeur critique (3.65 > 2.045), nous rejettons le l'hypothese nulle H0. Cela signifie qu'il y'a suffisamment de preuve que statistiques pour conclure que le diametre moyen des boulons n'est pas de 10 mm. 
+
+_Vous pouvez retrouver le code lie a ce cours en cliquant suur le lien [R](https://www.r-project.org/ "Page d'accueil de R"), [Python](https://www.r-project.org/ "Page d'accueil de R"), [C#](https://www.r-project.org/ "Page d'accueil de R")_.
