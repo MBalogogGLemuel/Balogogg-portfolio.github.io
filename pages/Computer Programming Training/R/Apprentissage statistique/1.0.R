@@ -10,10 +10,11 @@ for(pack in lib){
     install.packages(pack)
   }
 }
-remotes::install_github("lbelzile/hecmodstat")
-remotes::install_github("lbelzile/hecedsm")
+remotes::install_github("lbelzile/hecmodstat", force = TRUE)
+remotes::install_github("lbelzile/hecedsm", force = TRUE)
 
 # Note forcer l'installation avec le drapeau : "force=TRUE"
 
-
+## Seance 1
+data(LC19_S1, package= "hecdsm" )
 

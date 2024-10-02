@@ -1,0 +1,88 @@
+---
+title: "Seance 3 Modelisation statistique"
+author: "Georges"
+date: "2024-09-15"
+output: html_document
+---
+
+## Importation des libraires
+
+## Importation des donnees
+
+On cree la variable du chemin de nos donnees :
+
+```{r}
+FILE_DIR = "C:/Users/georg/OneDrive/Documents/GitHub/MBalogogGLemuel.github.io/Datasets"
+```
+
+Exemple 1 : Coherence de description des produits
+
+```{r}
+data(LC19_S1, package= "hecedsm" )
+```
+
+Exemple 2 : Apprendre a lire
+
+```{r}
+data(BSJ92, package = "hecedsm")
+```
+
+Exemple 3 : Salaire dans un college
+
+```{r}
+data(college, package="hecmodstat")
+```
+
+Exemple 4 : Suggestion de montant des dons
+
+```{r}
+data(MV23_S1, package="hecedsm")
+```
+
+Devoir de la semaine ( Exercice 2 et 3 ) : - Regression Lineaire - Vraisemblance
+
+```{r}
+data(eolienne, package="hecmodstat")
+```
+
+Nous allons sauvegarder ces donnees en **.csv** pour ;'utiliser aussi en python.
+
+```{r}
+write.csv(LC19_S1, file = "LC19_S1.csv")
+write.csv(BSJ92, file = "BSJ92.csv")
+write.csv(college, file = "college.csv")
+write.csv(MV23_S1, file = "MV23_S1.csv")
+
+write.csv(eolienne, file="eolienne.csv")
+```
+
+## Analyse exploratoire
+
+```{r}
+print(str(eolienne))
+print(summary(eolienne))
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
