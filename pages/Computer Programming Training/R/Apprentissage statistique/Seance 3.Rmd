@@ -7,6 +7,11 @@ output: html_document
 
 ## Importation des libraires
 
+```{r}
+library(ggplot2)
+library(patchwork)
+#library(qqplotr)
+```
 ## Importation des donnees
 
 On cree la variable du chemin de nos donnees :
@@ -58,29 +63,187 @@ write.csv(eolienne, file="eolienne.csv")
 
 ## Analyse exploratoire
 
+> Eolienne
+
 ```{r}
-print(str(eolienne))
-print(summary(eolienne))
+str(eolienne)
+summary(eolienne)
+
+ggplot( eolienne, aes(x=vitesse, y= production)) +
+          geom_point() + 
+          geom_smooth(method="lm") +
+          labs(title = "Production en fonction de la vitesse",
+               x="Vitesse",
+               y="Production")
+
+ggplot( eolienne, aes(x=1/vitesse, y= production)) +
+          geom_point() + 
+          geom_smooth(formula = "y ~ x", method="lm") +
+          labs(title = "Production en fonction de la vitesse",
+               x="1/Vitesse",
+               y="Production")
+
+
+```
+La matrice du modele devient donc :
+
+$$E(Production_i\ | \ Vitesse_i ) = \beta_0 + \beta_1.Vitesse_i + \epsilon = \mu_i$$
+$$Production_i = \beta_0 + \beta_1.Vitesse_i + \epsilon$$
+
+```{r}
+# Modele matriciel, 2 parametres et 1 variable explicative
+eolienneModeleMat <- model.matrix(
+  ~vitesse,
+  data=eolienne
+)
+print("Head")
+head(eolienneModeleMat)
+print("Tail")
+tail(eolienneModeleMat)
+
+#Ajustons 2 modele 
+
+## production~vitesse (1)
+linModEolienne <- lm(
+  production ~ vitesse, data=eolienne
+)
+summary(linModEolienne)
+
+## production~vitesse^(-1) (2)
+inverse_vitesse <- 1/eolienne$vitesse
+linModEolienneInv <- lm(
+  production ~ I(1/vitesse), data=eolienne
+)
+summary(linModEolienneInv)
+
+## Graphique des residus
+val_ajustee_1 <- fitted(linModEolienne)
+val_ajustee_2 <- fitted(linModEolienneInv)
+
+residus_1 <- resid(linModEolienne)
+residus_2 <- resid(linModEolienneInv)
+
+data_residu_1 <- data.frame(val_ajustee_1 , residus_1) 
+data_residu_2 <-data.frame(val_ajustee_2 , residus_2)
+
+ggplot(data_residu_1, aes(val_ajustee_1,residus_1)) + 
+  geom_point() +
+  geom_hline(yintercept = 0, linetype="dashed") +
+  theme_minimal()
+
+ggplot(data_residu_2, aes(val_ajustee_2,residus_2)) + 
+  geom_point() +
+  geom_hline(yintercept = 0, linetype="dashed") +
+  theme_minimal()
+```
+Predisons en utilisant les 2 modeles, la production pour une vitesse = 5 miles/heures
+```{r}
+nvelle_vitesse <- data.frame(vitesse = c(5))
+
+y_hat1 <- predict(linModEolienne, newdata =  nvelle_vitesse, interval = "prediction")
+ y_hat2 <- predict(linModEolienneInv, newdata =  nvelle_vitesse, interval = "prediction")
+ 
+ print(y_hat1)
+ print(y_hat2)
+ 
+```
+Note: 
+- L'intervalle de prediction c'est : " on a 95% de chance d'avoir une production dans cette intervalle pour cette vitesse de 5 m/h"
+- L'intervalle de confiance, c'est : "dans 95% des cas, la production moyenne sera de cette valeur pour cette vitesse de 5 m/h"
+
+Retirons l'ordonnee a l'origine pour le premier modele :
+
+```{r}
+eolienneModeleMat_sans_intercept <- model.matrix(
+  ~-1 + vitesse, # ou ~0
+  data=eolienne
+)
+print("Head")
+head(eolienneModeleMat_sans_intercept)
+
+## production~vitesse (1)
+linModEolienne_sans_intercept <- lm(
+  production ~ -1 + vitesse, data=eolienne
+)
+summary(linModEolienne_sans_intercept)
+
 ```
 
 ```{r}
+# Quantile-quantile plots
+mod <- lm(production ~ vitesse, data = eolienne)
 
+# Calculer les résidus studentisés externes
+residus_studentises <- rstudent(mod)
+
+# Diagramme quantile-quantile
+qqnorm(residus_studentises)
+qqline(residus_studentises, lwd = 2)
 ```
+Code fourni avec l'exercice :
 
 ```{r}
+# Exercice 2.5
 
-```
+data(eolienne, package = "hecmodstat")
+lm_eol1 <- lm(production ~ vitesse,
+               data = eolienne)
+summary(lm_eol1)
+lm_eol2 <- lm(production ~ I(1/vitesse),
+               data = eolienne)
+summary(lm_eol2)
+# Bibliothèque graphiques
+g1 <- ggplot(data = eolienne, aes(x = vitesse, y = production)) +
+    geom_point() +
+    geom_smooth(formula = 'y ~ x', method='lm', se = FALSE) +
+    labs(y = "production électrique",
+         x = "vitesse du vent \n(en miles à l'heure)")
+g2 <- ggplot(data = eolienne, aes(x = 1/vitesse, y = production)) +
+    geom_point() +
+    geom_smooth(formula = 'y ~ x', method='lm', se = FALSE) +
+    labs(y = "production électrique",
+         x = "vitesse du vent \n(en miles à l'heure)")
+g1 + g2
 
-```{r}
+g3 <- ggplot(data = data.frame(residuals = scale(resid(lm_eol1), scale = FALSE),
+                               fitted = fitted(lm_eol1)),
+             aes(x = fitted, y = residuals)) +
+    geom_point() +
+    geom_hline(yintercept = 0) +
+    labs(x = "valeurs ajustées",
+         y = "résidus ordinaires",
+         caption = "production ~ vitesse")
+g4 <- ggplot(data = data.frame(residuals = scale(resid(lm_eol2), scale = FALSE),
+                               fitted = fitted(lm_eol2)),
+             aes(x = fitted, y = residuals)) +
+    geom_point() +
+    geom_hline(yintercept = 0) +
+    labs(x = "valeurs ajustées",
+         y = "résidus ordinaires",
+         caption = "production ~ 1/vitesse")
+g3 + g4
 
-```
 
-```{r}
-
-```
-
-```{r}
-
+# Quantile-quantile plots
+#library(qqplotr)
+dfres <- lm_eol1$df.residual
+g5 <- ggplot(data = data.frame(rstudent = rstudent(lm_eol1)),
+             mapping = aes(sample = rstudent)) +
+    stat_qq_band(distribution = "t", detrend = TRUE, dparams = list(df = dfres)) +
+    stat_qq_line(distribution = "t", detrend = TRUE, dparams = list(df = dfres)) +
+    stat_qq_point(distribution = "t", detrend = TRUE, dparams = list(df = dfres)) +
+    labs(x = "quantiles théoriques",
+         y = "quantiles empiriques",
+         caption = "production ~ vitesse")
+g6 <- ggplot(data = data.frame(rstudent = rstudent(lm_eol2)),
+             mapping = aes(sample = rstudent)) +
+    stat_qq_band(distribution = "t", detrend = TRUE, dparams = list(df = dfres)) +
+    stat_qq_line(distribution = "t", detrend = TRUE, dparams = list(df = dfres)) +
+    stat_qq_point(distribution = "t", detrend = TRUE, dparams = list(df = dfres)) +
+    labs(x = "quantiles théoriques",
+         y = "quantiles empiriques",
+         caption = "production ~ vitesse")
+g5 + g6
 ```
 
 ```{r}
